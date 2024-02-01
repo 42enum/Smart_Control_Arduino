@@ -18,11 +18,11 @@ IRsend emissorIR;
 bool lerComando = false;
 
 // DECLARAÇÃO DAS FUNÇÕES DE LEITURA
-void ircode(decode_results *results);
-void encoding(decode_results *results);
-void dumpInfo(decode_results *results);
-void dumpRaw(decode_results *results);
-void dumpCode(decode_results *results);
+// void ircode(decode_results *results);
+// void encoding(decode_results *results);
+// void dumpInfo(decode_results *results);
+// void dumpRaw(decode_results *results);
+// void dumpCode(decode_results *results);
 
 //  DECLARAÇÃO DAS TECLAS CLONADAS
 /*Aqui vai ser o código que vc pecisar implementar. Sugiro usar o vídeo de base*/
@@ -41,36 +41,44 @@ void setup() {
 
 void loop() {
   // LAÇO PARA LEITURA DO RECEPTOR IR QUANDO FOR PRESSIONADO O BOTÃO
-  while (lerComando) {
+  // while (lerComando) {
 
-    decode_results results;
+  //   decode_results results;
 
-    if (receptorIR.decode(&results)) {
-      ircode(&results);
-      encoding(&results);
-      dumpInfo(&results);
-      dumpRaw(&results);
-      dumpCode(&results);
-      receptorIR.resume();
-      lerComando = false;
-      digitalWrite(pinLed, LOW);
-    }
-  }
+  //   if (receptorIR.decode(&results)) {
+  //     ircode(&results);
+  //     encoding(&results);
+  //     dumpInfo(&results);
+  //     dumpRaw(&results);
+  //     dumpCode(&results);
+  //     receptorIR.resume();
+  //     lerComando = false;
+  //     digitalWrite(pinLed, LOW);
+  //   }
+  // }
 
   // BLOCO PARA RECEBER DADOS DA SERIAL E INICIAR EMISSOR IR
   if (Serial.available()) {
 
     String command = Serial.readString();
+    Serial.println(command);
 
-    if (command == "a") {
+
+    if (command[0] == 'l') {
       emissorIR.sendRaw(frerp1_on, sizeof(frerp1_on) / sizeof(frerp1_on[0]), frequencia);
       Serial.println("Enviando Tecla A clonada");
       delay(tempoTecla);
-    } else if (command == "b") {
+      digitalWrite(pinLed, HIGH);
+      delay(500);
+      digitalWrite(pinLed, LOW);
+    } else if (command[0] == 'd') {
       emissorIR.sendRaw(frerp1_off, sizeof(frerp1_off) / sizeof(frerp1_off[0]), frequencia);
       Serial.println("Enviando Tecla B clonada");
       delay(tempoTecla);
-    } else {
+      digitalWrite(pinLed, HIGH);
+      delay(500);
+      digitalWrite(pinLed, LOW);
+    } else if (command[0] == 'r') {
       if (!lerComando) {
         lerComando = true;
         digitalWrite(pinLed, HIGH);
