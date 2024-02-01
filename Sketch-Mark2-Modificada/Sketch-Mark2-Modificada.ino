@@ -1,5 +1,6 @@
 // INCLUSÃO DE BIBLIOTECA
 #include <IRremote.h>
+#include <SoftwareSerial.h>
 //#include <PushButton.h>
 
 // DIRETIVAS DE COMPILAÇÃO
@@ -13,7 +14,7 @@
 // INSTANCIANDO OBJETOS
 IRrecv receptorIR(pinReceptor);
 IRsend emissorIR;
-
+SoftwareSerial espSerial(5,6);
 // DECLARAÇÃO VARIÁVEIS GLOBAIS
 bool lerComando = false;
 
@@ -32,6 +33,7 @@ unsigned int frerp1_off[] = { 3150, 1600, 450, 1050, 450, 1100, 450, 400, 450, 4
 void setup() {
 
   Serial.begin(9600);
+  espSerial.begin(9600);
   pinMode(pinLed, OUTPUT);
 
   // INICIANDO RECEPTOR IR
@@ -58,9 +60,9 @@ void loop() {
   // }
 
   // BLOCO PARA RECEBER DADOS DA SERIAL E INICIAR EMISSOR IR
-  if (Serial.available()) {
+  if (espSerial.available()>0) {
 
-    String command = Serial.readString();
+    String command = espSerial.readString();
     Serial.println(command);
 
 
