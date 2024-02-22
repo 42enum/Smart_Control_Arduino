@@ -51,5 +51,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 4. **Sketch Arduino_com_Esp**
 
    Essa Sketch deve ser upada apenas em Arduinos com memória superior as do arduino uno, pois com o mesmo há instabilidade no funcionamento.
+
+   
    ![gif 3d](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/67bdc6ce-a17e-4e8a-8115-4e55c20c041a)
 
