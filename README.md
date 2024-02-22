@@ -26,6 +26,8 @@ https://www.arduino.cc/en/software
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
   Após isso, clique em **Ferramentas -> Placa -> Gerenciador de Placas** e busque pela opção **esp8266 by ESP8266 Community** e clique no botão **Instalar**:
+
+  
   ![image](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/4de604b0-0334-425e-a644-e5ff6c00e6d8)
 
   Depois de feito esse processo, basta ir em **Ferramentas -> Placa: -> Module Generic Esp8266**.
@@ -39,6 +41,8 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 
    ![WhatsApp Image 2024-02-07 at 13 13 24](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/f1df90df-0c19-47d5-ad26-ca2fd12d7ec6)
+   ![WhatsApp Image 2024-02-09 at 13 08 51](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/56745ae9-1278-4cbf-ac86-2897d8927d84)
+
 
 3. **Arduino Mark_Original**
 
@@ -47,3 +51,5 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 4. **Sketch Arduino_com_Esp**
 
    Essa Sketch deve ser upada apenas em Arduinos com memória superior as do arduino uno, pois com o mesmo há instabilidade no funcionamento.
+   ![gif 3d](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/67bdc6ce-a17e-4e8a-8115-4e55c20c041a)
+
