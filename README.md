@@ -36,12 +36,14 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
    Carregue para a placa Arduino a sketch **Arduino_Mark_Modificado** e a **Sketch_Esp** para o Esp8266 (de preferencia com um adaptador USB para facilitar).
    Após isso faça essa configuração de pinos (de preferencia também usando um adaptador de 3.3V para 5V no Esp8266 a fim de prevenir erros de funcionamento):
+
+
    ![WhatsApp Image 2024-02-07 at 13 13 24](https://github.com/42enum/Smart_Control_Arduino/assets/116222412/f1df90df-0c19-47d5-ad26-ca2fd12d7ec6)
 
-2. **Arduino Mark_Original**
+3. **Arduino Mark_Original**
 
    Para matutenção do equipamento e buscar rows novas, use a **Mark_Original** com um receptor IR.
 
-3. **Sketch Arduino_com_Esp**
+4. **Sketch Arduino_com_Esp**
 
    Essa Sketch deve ser upada apenas em Arduinos com memória superior as do arduino uno, pois com o mesmo há instabilidade no funcionamento.
